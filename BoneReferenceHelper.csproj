@@ -22,29 +22,29 @@
     <Win32Resource />
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>$(ResonitePath)rml_libs/0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="FrooxEngine">
-      <HintPath>$(ResonitePath)Resonite_Data/Managed/FrooxEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="FrooxEngine.Store">
-      <HintPath>$(ResonitePath)Resonite_Data/Managed/FrooxEngine.Store.dll</HintPath>
-    </Reference>
-    <Reference Include="BaseX">
-      <HintPath>$(ResonitePath)Resonite_Data/Managed/Elements.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CodeX">
-      <HintPath>$(ResonitePath)Resonite_Data/Managed/Elements.Assets.dll</HintPath>
-    </Reference>
-    <Reference Include="ResoniteModLoader">
-      <HintPath>$(ResonitePath)Libraries/ResoniteModLoader.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(CopyToMods)'=='true'">
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ResonitePath)rml_mods" />
     <Message Text="Copied $(TargetFileName) to $(ResonitePath)rml_mods" Importance="high" />
   </Target>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\Steam\SteamApps\common\Resonite\rml_libs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Elements.Assets">
+      <HintPath>..\..\..\..\..\Steam\SteamApps\common\Resonite\Resonite_Data\Managed\Elements.Assets.dll</HintPath>
+    </Reference>
+    <Reference Include="Elements.Core">
+      <HintPath>..\..\..\..\..\Steam\SteamApps\common\Resonite\Resonite_Data\Managed\Elements.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FrooxEngine">
+      <HintPath>..\..\..\..\..\Steam\SteamApps\common\Resonite\Resonite_Data\Managed\FrooxEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FrooxEngine.Store">
+      <HintPath>..\..\..\..\..\Steam\SteamApps\common\Resonite\Resonite_Data\Managed\FrooxEngine.Store.dll</HintPath>
+    </Reference>
+    <Reference Include="ResoniteModLoader">
+      <HintPath>..\..\..\..\..\Steam\SteamApps\common\Resonite\Libraries\ResoniteModLoader.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
